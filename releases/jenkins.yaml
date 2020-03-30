@@ -1,0 +1,17 @@
+releases:
+- name: "jenkins"
+  namespace: "jenkins"
+  labels:
+    chart: "jenkins"
+    repo: "stable"
+  chart: "stable/jenkins"
+  wait: true
+  set:
+    - name: master.slaveListenerServiceType
+      value: "NodePort"
+    - name: master.master.serviceType
+      value: "NodePort"
+    - name: master.nodePort
+      value: 32000
+    - name: master.slaveListenerPort
+      value: 30000
