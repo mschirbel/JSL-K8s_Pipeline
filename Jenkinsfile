@@ -4,7 +4,7 @@ parameters {
         string(name: name, defaultValue: 'Marcelo', description: '')
 }
 
-jobMedium(
+jobsMedium(
   name: name
 )
 
