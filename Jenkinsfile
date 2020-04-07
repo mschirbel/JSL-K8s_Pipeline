@@ -1,7 +1,7 @@
 @Library('libs@master') _
 
 parameters {
-    string(name: appOwner, defaultValue: 'Marcelo', description: '')
+    string(name: appOwner, defaultValue: false, description: '')
 }
 
 jobsMedium(
