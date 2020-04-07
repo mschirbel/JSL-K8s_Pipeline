@@ -1,10 +1,10 @@
 @Library('libs@master') _
 
 environment {
-    ENV4CONTAINER = "Marcelo"
+    ENV4CONTAINER = string(name: author, defaultValue: 'Marcelo', description: '')
 }
 
 jobMedium(
-  name: "Marcelo"
+  name: ENV4CONTAINER
 )
 
