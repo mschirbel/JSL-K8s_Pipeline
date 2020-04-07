@@ -8,6 +8,7 @@ def call(Map args) {
     url: "https://hub.docker.com/repository/docker/marceloschirbel/jsl-medium",
     credentials: "90f8072d-4194-4c7e-807b-90e4a4135093"
   ]
+  def registryRepository = "marceloschirbel/jsl-medium"
   def name = args.name
   def label = "job-${name}-${UUID.randomUUID().toString()}".take(15)
   def tag = "${UUID.randomUUID().toString()}".take(5)
