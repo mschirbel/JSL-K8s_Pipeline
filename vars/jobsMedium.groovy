@@ -27,9 +27,7 @@ def call(Map args) {
             stage('Build and publish image to Registry') {
                   container('docker') {
                     docker.withRegistry(REGISTRY_CONFIG.url, REGISTRY_CONFIG.credentials) {
-                      docker
-                        .build(imageName)
-                        .push()
+                      docker.build(imageName).push()
                     }
                   }
               }

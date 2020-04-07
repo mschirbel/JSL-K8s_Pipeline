@@ -2,7 +2,6 @@
 
 parameters {
         string(name: appOwner, defaultValue: 'Marcelo', description: '')
-
 }
 
 jobsMedium(
