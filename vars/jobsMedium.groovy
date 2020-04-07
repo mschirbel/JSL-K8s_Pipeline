@@ -11,8 +11,8 @@ def call(Map args) {
   def name = args.name
   def label = "job-${name}-${UUID.randomUUID().toString()}".take(15)
   def tag = "${UUID.randomUUID().toString()}".take(5)
-  def podContainers = DEFAULT_CONTAINERS + containers
-  def podVolumes = DEFAULT_VOLUMES + volumes
+  def podContainers = DEFAULT_CONTAINERS
+  def podVolumes = DEFAULT_VOLUMES
   def imageName = "${registryRepository}:${tag}"
 
   podTemplate(label: label, containers: podContainers, volumes: podVolumes, serviceAccount: 'jenkins') {
