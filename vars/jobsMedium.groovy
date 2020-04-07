@@ -15,7 +15,7 @@ def call(Map args) {
   def podVolumes = DEFAULT_VOLUMES
   def imageName = "${registryRepository}:${tag}"
 
-  podTemplate(label: label, containers: containers, volumes: podVolumes, serviceAccount: 'jenkins') {
+  podTemplate(label: label, containers: containers, volumes: podVolumes) {
     node(label) {
         stage('Checkout') {
           checkout scm
