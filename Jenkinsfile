@@ -1,7 +1,8 @@
 @Library('libs@master') _
 
-environment {
-    appOwner = 'Marcelo'
+parameters {
+        string(name: appOwner, defaultValue: 'Marcelo', description: '')
+
 }
 
 jobsMedium(
