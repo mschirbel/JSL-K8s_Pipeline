@@ -5,6 +5,6 @@ environment {
     }
 
 jobMedium(
-  name: ENV4CONTAINER
+  name: env.ENV4CONTAINER
 )
 

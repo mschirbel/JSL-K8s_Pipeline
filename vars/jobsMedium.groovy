@@ -9,7 +9,7 @@ def call(Map args) {
     url: "https://hub.docker.com/repository/docker/marceloschirbel/jsl-medium",
     credentials: "90f8072d-4194-4c7e-807b-90e4a4135093"
   ]
-  def name = args.name ?: "Admin"
+  def name = args.name
   // -- execution --
   def label = "job-${name}-${UUID.randomUUID().toString()}".take(15)
   def tag = "${UUID.randomUUID().toString()}".take(5)
