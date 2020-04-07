@@ -3,7 +3,6 @@ def call(Map args) {
     containerTemplate(name: 'node', image: 'alpine', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true)
   ]
-  def DEFAULT_VOLUMES = [hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')]
   def REGISTRY_CONFIG = [
     url: "https://hub.docker.com/repository/docker/marceloschirbel/jsl-medium",
     credentials: "90f8072d-4194-4c7e-807b-90e4a4135093"
