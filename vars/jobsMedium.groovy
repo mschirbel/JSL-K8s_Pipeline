@@ -1,5 +1,5 @@
 def call(Map args) {
-  def DEFAULT_CONTAINERS = [
+  def containers = [
     containerTemplate(name: 'node', image: 'node:dubnium', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true)
   ]
@@ -12,7 +12,7 @@ def call(Map args) {
   def name = args.name
   def label = "job-${name}-${UUID.randomUUID().toString()}".take(15)
   def tag = "${UUID.randomUUID().toString()}".take(5)
-  def podContainers = DEFAULT_CONTAINERS
+  def podContainers = containers
   def podVolumes = DEFAULT_VOLUMES
   def imageName = "${registryRepository}:${tag}"
 
