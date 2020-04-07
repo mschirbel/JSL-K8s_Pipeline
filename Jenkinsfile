@@ -2,11 +2,11 @@
 
 parameters {
     string(name: appOwner, defaultValue: false, description: '')
-    string(name: registryRemote, defaultValue: false, description: '')
+    string(name: registry, defaultValue: false, description: '')
 }
 
 jobsMedium(
   name: appOwner,
-  registry: registryRemote
+  registry: registry
 )
 
