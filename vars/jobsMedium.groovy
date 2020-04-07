@@ -1,6 +1,6 @@
 def call(Map args) {
   def containers = [
-    containerTemplate(name: 'node', image: 'node:dubnium', ttyEnabled: true),
+    containerTemplate(name: 'node', image: 'alpine', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true)
   ]
   def DEFAULT_VOLUMES = [hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')]
