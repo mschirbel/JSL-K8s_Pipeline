@@ -5,6 +5,6 @@ environment {
 }
 
 jobsMedium(
-  name: appOwner
+  name: env.appOwner
 )
 
