@@ -1,11 +1,10 @@
 def call(Map args) {
   def DEFAULT_CONTAINERS = [
-    containerTemplate(name: 'node', image: 'node', ttyEnabled: true),
+    containerTemplate(name: 'node', image: 'node:dubnium', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true)
   ]
   def DEFAULT_VOLUMES = [hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')]
   def REGISTRY_CONFIG = [
-    host: '454706396284.dkr.ecr.us-east-1.amazonaws.com',
     url: "https://hub.docker.com/repository/docker/marceloschirbel/jsl-medium",
     credentials: "90f8072d-4194-4c7e-807b-90e4a4135093"
   ]
