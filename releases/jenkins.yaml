@@ -52,3 +52,58 @@ releases:
       - workflow-scm-step:2.10
       - workflow-step-api:2.22
       - workflow-support:3.4
+    - name: persistence.size
+      value: 15Gi
+    - name: master.jobs
+      values:
+      - mediumJob: |-
+        <flow-definition plugin="workflow-job@2.38">
+        <actions/>
+        <description/>
+        <keepDependencies>false</keepDependencies>
+        <properties>
+        <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.5">
+        <projectUrl>https://github.com/mschirbel/JSL-K8s_Pipeline.git/</projectUrl>
+        <displayName/>
+        </com.coravy.hudson.plugins.github.GithubProjectProperty>
+        <hudson.model.ParametersDefinitionProperty>
+        <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+        <name>appOwner</name>
+        <description/>
+        <defaultValue>Marcelo</defaultValue>
+        <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+        <name>registry</name>
+        <description/>
+        <defaultValue>marceloschirbel/jsl-medium</defaultValue>
+        <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        </properties>
+        <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.80">
+        <scm class="hudson.plugins.git.GitSCM" plugin="git@4.2.2">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+        <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/mschirbel/JSL-K8s_Pipeline</url>
+        <credentialsId>dc5e757f-988c-4805-a35a-ee4c05255970</credentialsId>
+        </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+        <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+        </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="list"/>
+        <extensions/>
+        </scm>
+        <scriptPath>Jenkinsfile</scriptPath>
+        <lightweight>true</lightweight>
+        </definition>
+        <triggers/>
+        <disabled>false</disabled>
+        </flow-definition>
