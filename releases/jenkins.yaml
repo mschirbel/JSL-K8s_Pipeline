@@ -15,6 +15,8 @@ releases:
       value: 32000
     - name: master.slaveListenerPort
       value: 30000
+    - name: serviceAccountAgent.create
+      value: true
     - name: master.installPllugins
       values:
       - nodejs:1.3.4
