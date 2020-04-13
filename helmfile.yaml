@@ -1,2 +1,7 @@
 helmfiles:
   - "releases/jenkins.yaml"
+
+helmDefaults:
+  wait: true
+  timeout: 600
+  verify: true
