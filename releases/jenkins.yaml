@@ -1,11 +1,7 @@
 releases:
 - name: "jenkins"
   namespace: "jenkins"
-  labels:
-    chart: "jenkins"
-    repo: "stable"
   chart: "stable/jenkins"
-  wait: true
   set:
     - name: master.slaveListenerServiceType
       value: "NodePort"
@@ -54,3 +50,5 @@ releases:
       - workflow-support:3.4
     - name: persistence.size
       value: 10Gi
+    - name: master.jobs.mediumJob
+      file: mediumJob.xml

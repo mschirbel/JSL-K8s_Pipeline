@@ -1,6 +1,6 @@
 def call(Map args) {
   def containers = [
-    containerTemplate(name: 'node', image: 'alpine', ttyEnabled: true),
+    containerTemplate(name: 'node', image: 'node', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true),
     containerTemplate(name: 'jnlp', image: 'jenkins/jnlp-slave:3.35-5-alpine', ttyEnabled: true)
   ]
